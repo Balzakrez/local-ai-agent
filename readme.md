@@ -16,8 +16,8 @@ A simple and elegant Python CLI chat agent that connects to local Large Language
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/Balzakrez/local-ai-agent.git
+   cd local-ai-agent
    ```
 
 2. Install the dependencies:
@@ -73,7 +73,7 @@ You can initialize the agent with a specific model name and/or system prompt:
 ```python
 agent = LocalAgent(
     model="qwen3.5",
-    system_prompt="You are a helpful assistant."
+    system_prompt="You are a helpful assistant, concise and always respond in Italian."
 )
 ```
 
