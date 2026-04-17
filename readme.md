@@ -37,6 +37,37 @@ A simple and elegant Python CLI chat agent that connects to local Large Language
 4. Type your message and press Enter.
 5. Type `quit` or `exit` to close the session.
 
+## Usage Examples
+
+### 1) Quick startup check
+If you run the agent with the built-in `get_time` context function, you can ask for current info immediately.
+
+```text
+Agent started! Write 'quit' or 'exit' to quit.
+
+You: What's the time and who am I?
+
+Assistant: L'ora è 18:13 e sei Giuseppe.
+```
+
+### 2) Follow-up in the same conversation
+Because chat messages are stored in memory, the assistant can continue from previous replies.
+
+```text
+You: Ottimo, tu chi sei, un agente?
+Assistant: No, non sono un agente. Sono un'intelligenza artificiale progettata per aiutarti con informazioni, risposte alle domande e compiti vari in modo rapido e preciso. Posso assisterti come il tuo assistente virtuale!
+```
+
+### 3) Register your own context function
+You can inject dynamic context (time, user, app state) by registering a function.
+
+```python
+def get_time() -> str:
+   return "Current date and time: 2026-04-17 18:13:00\nCurrent user: Giuseppe"
+
+agent.add_context_function(get_time)
+```
+
 ## Configuration
 You can initialize the agent with a specific model name and/or system prompt:
 ```python
